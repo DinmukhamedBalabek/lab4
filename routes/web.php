@@ -35,6 +35,6 @@ Route::get('posts/add',Function(){
 });
 
 Route::get('posts',function(){
-    $posts = Posts::find(2);
+    $posts = Posts::find(1);
     return $posts;
 });
