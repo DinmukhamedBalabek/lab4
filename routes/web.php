@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+use App\Models\Posts;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,15 @@ Route::get('/user', function () {
 Route::get('/home', function () {
     return "home";
 })->name('home');
+
+Route::get('posts/add',Function(){
+    DB::table('posts')->insert([
+        'title' => 'My title',
+        'body' => 'My body'
+    ]);
+});
+
+Route::get('posts',function(){
+    $posts = Posts::find(2);
+    return $posts;
+});
