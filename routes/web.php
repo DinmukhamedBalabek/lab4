@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+
 use App\Models\Posts;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +36,5 @@ Route::get('posts/add',Function(){
     ]);
 });
 
-Route::get('posts',function(){
-    $posts = Posts::find(1);
-    return $posts;
-});
+Route::get('posts', [ClientController::class, 'index']);
+
