@@ -7,10 +7,12 @@
     <title>Create new client</title>
 </head>
 <body>
-    <form mmethod="Post" action="">
+    <form mmethod="Post" action="{{ route('add-posts')}}">
+    @csrf
     <input type="text" name="name" placeholder="name">
     <input type="text" name="surname" placeholder="surname">
     <input type="text" name="age" placeholder="age">
+    <button type="submit">Create</button> 
     </form>
 </body>
 </html>

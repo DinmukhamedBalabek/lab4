@@ -31,7 +31,7 @@ Route::get('/home', function () {
 
 Route::get('posts/add',Function(){
     DB::table('posts')->insert([
-        'name' => 'Diamsh',
+        'name' => 'Dimash',
         'surname' => 'Balabek',
         'age' => 19
     ]);
