@@ -9,9 +9,8 @@
 <body>
     <form mmethod="Post" action="{{ route('add-posts')}}">
     @csrf
-    <input type="text" name="name" placeholder="name">
-    <input type="text" name="surname" placeholder="surname">
-    <input type="text" name="age" placeholder="age">
+    <input type="text" name="title" placeholder="Name">
+    <input type="text" name="body" placeholder="Surname">
     <button type="submit">Create</button> 
     </form>
 </body>

@@ -31,13 +31,12 @@ Route::get('/home', function () {
 
 Route::get('posts/add',Function(){
     DB::table('posts')->insert([
-        'name' => 'Dimash',
-        'surname' => 'Balabek',
-        'age' => 19
+        'title' => 'My title',
+        'body' => 'My body'
     ]);
 });
 
-Route::get('posts', [ClientController::class, 'index']);
+Route::get('post', [ClientController::class, 'index']);
 
 Route::get('posts/create',function(){
     return view('posts.create');

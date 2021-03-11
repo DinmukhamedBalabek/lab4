@@ -11,15 +11,14 @@ class ClientController extends Controller
     public function index(){
        $posts = Posts::all();
         //
-        return view('posts.index')->with(['posts' => $posts]);
- }
+        return view('post.index')->with(['posts' => $posts]);
+ }  
 
     public function store(Request $request) {
        Posts::create([
-            'name' => $request->name,
-            'surname' => $request->surname,
-            'age' => $request->age
+            'title' => $request->title,
+            'body' => $request->body
        ]);
-       return back();
+       return back(); 
     }
 }
