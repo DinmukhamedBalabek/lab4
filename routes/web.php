@@ -38,8 +38,8 @@ Route::get('posts/add',Function(){
 
 Route::get('post', [ClientController::class, 'index']);
 
-Route::get('posts/create',function(){
-    return view('posts.create');
+Route::get('post/create',function(){
+    return view('post.create');
 });
 
-Route::post('posts/create', [ClientController::class, 'store'])->name('add-posts');
+Route::post('post/create', [ClientController::class, 'store'])->name('add-posts');

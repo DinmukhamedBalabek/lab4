@@ -7,7 +7,7 @@
     <title>Create new client</title>
 </head>
 <body>
-    <form mmethod="Post" action="{{ route('add-posts')}}">
+    <form method="Post" action="{{ route('add-posts')}}">
     @csrf
     <input type="text" name="title" placeholder="Name">
     <input type="text" name="body" placeholder="Surname">
