@@ -8,7 +8,7 @@ use App\Models\Posts;
 
 class ClientController extends Controller
 {
-    public function index(){
+    public function index(){ 
        $posts = Posts::all();
         //
         return view('post.index')->with(['posts' => $posts]);
@@ -20,5 +20,14 @@ class ClientController extends Controller
             'body' => $request->body
        ]);
        return back(); 
+    }
+
+    public function get_post($id){
+      $post = Posts::find($id);
+
+      if ($post == null)
+      return response(['message' => 'post not found'], 404);
+
+      return view('post.detail')->with(['post' => $post]);
     }
 }
