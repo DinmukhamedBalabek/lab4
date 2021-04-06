@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\Posts;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +45,14 @@ Route::get('post/create',function(){
 
 Route::post('post/create', [ClientController::class, 'store'])->name('add-posts');
 
-Route::get('post/{id}',[ClientController::class, 'get_post']);
+Route::get('post/{id}',[ClientController::class, 'get_post'],Function($id){
+    return "id number is : ".$id;
+});
+
+Route::get('contact-us',[ContactController::class,'contact']);
+
+Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contact.send');
+
+Route::get('/employee','EmployeeController@index');
+
+Route::post('/addimage','EmployeeController@store')->name('addimage');
